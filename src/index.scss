@@ -1,0 +1,133 @@
+@import './utils/normalize.scss';
+@import './utils/variables';
+@font-face {
+  font-family: 'DevilTail';
+  src: local('DevilTailPersonalUse-vmZ2A'), url('./assets/fonts/DevilTailPersonalUse-vmZ2A.otf'),
+    format('opentype');
+}
+
+body {
+  background: url('./assets/images/bg.jpg') no-repeat;
+  background-position: 50% 40%;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+button {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+
+  background-color: $red-2;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $red-3;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    border-right: 8px double $red-1;
+    border-left: 8px double $red-1;
+    cursor: unset;
+    pointer-events: none;
+
+    background-color: $black-1;
+    color: $red-3;
+    position: relative;
+  }
+}
+
+input {
+  padding: 10px 10px;
+  background-color: $cream-1;
+  height: 30px;
+  color: $red-2;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  outline: 6px double transparent;
+  border-radius: 5px;
+
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    outline: 6px double $cream-2;
+  }
+
+  &::placeholder {
+    color: #866e51;
+  }
+}
+
+select {
+  height: 50px;
+  padding: 10px 10px;
+  width: 276px;
+  border-radius: 5px;
+  background-color: $cream-1;
+  color: $red-2;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+
+  &:focus {
+    outline: 6px double $cream-2;
+  }
+
+  option:hover {
+    border-color: $black-1;
+  }
+}
+
+option {
+  color: $red-1;
+  font-weight: 700;
+
+  &:disabled {
+    color: $cream-1;
+    background-color: $red-2;
+  }
+}
+
+select:focus {
+  border-color: $black-1;
+  outline: none;
+}
+
+option:checked,
+option:hover,
+option:active,
+option:focus {
+  background-color: $red-3;
+  color: $cream-1;
+}
+
+* {
+  font-family: 'Noto Serif', serif;
+  color: $cream-1;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #730202;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $cream-1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #730202;
+  border-radius: 10px;
+  border: 0px solid #ffffff;
+}

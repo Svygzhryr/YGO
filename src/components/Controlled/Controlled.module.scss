@@ -1,0 +1,178 @@
+@import '../../utils/variables';
+
+h1 {
+  font-size: 36px;
+}
+
+h6 {
+  font-size: 8px;
+  margin-top: -20px;
+}
+
+.formWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 26px;
+
+  width: 90%;
+  margin: 40px auto 0;
+
+  justify-content: center;
+}
+
+.invalid {
+  outline: 6px double $red-3;
+}
+
+.form:before,
+.form:after {
+  content: '';
+  display: block;
+  border-top: 6px double $cream-1;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 200px 200px 50% 50%;
+}
+
+.form:after {
+  border-radius: 50% 50% 200px 200px;
+}
+
+.file {
+  color: $cream-1;
+  background-color: $red-2;
+  width: 276px;
+  height: 50px;
+  padding: 0;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    color: $red-5;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 2px double transparent;
+  }
+
+  &:active {
+    transition: none;
+
+    outline: 6px double $cream-1;
+  }
+}
+
+.file::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 5px;
+  height: 50px;
+}
+
+.checkboxWrapper {
+  width: 80%;
+
+  margin: 20px auto 0;
+  display: flex;
+
+  user-select: none;
+
+  p {
+    margin: 0px 5px 0;
+    transition: all 0.2s ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    p {
+      transition: none;
+      color: $red-3;
+    }
+  }
+}
+
+.checkbox {
+  border-radius: 0;
+  width: 40px;
+  height: 40px;
+  background-color: $cream-1;
+  accent-color: $red-2;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 2px double transparent;
+  }
+}
+
+.submitButton {
+  margin: 10px 0 40px;
+  padding: 10px 20px;
+  font-size: 20px;
+
+  border-top: 8px double $red-1;
+  border-bottom: 8px double $red-1;
+
+  box-shadow: 0 0 30px 5px $red-1;
+
+  &:hover {
+    background-color: $red-1;
+  }
+
+  &:active {
+    background-color: $red-2;
+    transition: unset;
+  }
+}
+
+.errorText {
+  height: 20px;
+  margin: 10px auto 4px;
+  width: 90%;
+  color: $red-4;
+  font-size: 12px;
+}
+
+.autocompleteInputWrapper {
+  position: relative;
+  margin: 0 auto;
+
+  input {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.countries {
+  width: 276px;
+  max-height: 130px;
+  overflow: auto;
+  position: absolute;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 0 0 5px 5px;
+}
+
+.countriesItem {
+  padding: 10px;
+  text-align: left;
+  background-color: $cream-1;
+  color: $red-2;
+  font-weight: 700;
+  font-size: 20px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $red-1;
+    color: $cream-1;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 2px solid $cream-3;
+  }
+}
